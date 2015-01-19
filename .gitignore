@@ -1,0 +1,12 @@
+/dist
+/.tmp
+/node_modules
+/bower_components
+/ffmpegsumo.dll
+/icudtl.dat
+/libEGL.dll
+/libGLESv2.dll
+/nw.exe
+/nw.pak
+/nwsnapshot.exe
+/locales
