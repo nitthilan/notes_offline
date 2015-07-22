@@ -2,13 +2,13 @@
 window.routes =
 {
   "/notes": {
-    templateUrl: 'module/notes/notes_view.html', 
-    controller: 'notesCtrl', 
+    templateUrl: 'module/notes/notes_view.html',
+    controller: 'notesCtrl',
     requireLogin: true
   }
 };
 // Declare app level module which depends on filters, and services
-var MyApp = angular.module('myApp', ['myApp.controllers', 'ngRoute', 'ui.bootstrap', 'ui.select2','ui.utils','ui.ace']);
+var MyApp = angular.module('myApp', ['myApp.controllers', 'ngRoute', 'ui.bootstrap', 'ui.ace']);
 var MyAppControllers = angular.module('myApp.controllers', []);
 
 MyApp

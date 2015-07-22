@@ -21,7 +21,7 @@ MyAppControllers.controller('notesCtrl', [ '$scope','$http','$timeout', '$filter
 	    var _renderer = _editor.renderer;
 
 	    // Options
-	    _editor.setReadOnly(true);
+	    _editor.setReadOnly(false);
 	    _session.setUndoManager(new ace.UndoManager());
 	    _session.getUndoManager().reset();// Required to identify that a document has changed or not
 	    _renderer.setShowGutter(false);
@@ -72,27 +72,27 @@ MyAppControllers.controller('notesCtrl', [ '$scope','$http','$timeout', '$filter
 	    //_editor.on("changeSession", function(){ ... });
 	    //_session.on("change", $scope.changeCallBack);
 	}
-	
+
 	$scope.createNotePlaceHolder = "note name";
 	$scope.createNote = function(newNote){
 		notesNodeModel.create(newNote,
 			function(postData){
 				//console.log(postData);
 				$scope.createNotePlaceHolder = "note created";
-				$timeout(function(){ 
+				$timeout(function(){
 					$scope.createNotePlaceHolder = "note name";
 				}, 5000);
 				if($scope.activeNotesList.indexOf(postData) == -1){
 					$scope.activeNotesList.push(postData);
 				}
-				$scope.notesList.push(postData);			
+				$scope.notesList.push(postData);
 			},
 			function(err){
 				console.log(err);
 				$scope.createNotePlaceHolder = "note not created";
 				$timeout(function(){
 					$scope.createNotePlaceHolder = "note name";
-				}, 5000);			
+				}, 5000);
 			}
 		);
 		$scope.newNote = null;
@@ -105,7 +105,7 @@ MyAppControllers.controller('notesCtrl', [ '$scope','$http','$timeout', '$filter
 				//console.log(getData);
 				var checkTextAvailable = $filter('filter')($scope.activeNotesList, selectedNoteId);
 				if(checkTextAvailable.length === 0){
-					$scope.activeNotesList.push(getData);				
+					$scope.activeNotesList.push(getData);
 				}
 				$scope.$apply();
 			},

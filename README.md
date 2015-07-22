@@ -24,6 +24,10 @@ A Simple Note Taking application
 - Uses a local file to store and retrive notes NeDB
 - Uses node-web-kit to run the application as a offline application
 
+FAQ:
+====
+-
+
 Future Features:
 ================
 - Ability to add the nedb database file from a already existing path so that we can use dropbox to synchronise across desktops
